@@ -29,7 +29,8 @@ public class BrowseCartTest {
 		if (browser.equalsIgnoreCase("Firefox")) {
 			webDriver = new FirefoxDriver();
 		} else if (browser.equalsIgnoreCase("Chrome")) {			
-			System.setProperty("webdriver.chrome.driver","src/test/resources/chromedriver.exe");
+			File file = new File(Consts.CHROME_DRIVER);
+			System.setProperty("webdriver.chrome.driver",file.getAbsolutePath());
 			webDriver = new ChromeDriver();		
 		} else {
 			throw new IllegalArgumentException(Consts.BROWSER_UNDEFINED);
