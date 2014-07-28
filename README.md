@@ -1,7 +1,10 @@
 automation-marketplace
 ======================
 
-Test Automation using Selenium WebDriver, TestNG, ReportNG and Maven
+Test Automation using Selenium WebDriver, TestNG, ReportNG and Maven.
+
+JDK 6
+Multi browsers (Firefox and Chrome)
 
 - Suite 1
 
