@@ -7,6 +7,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 
+import com.example.automation.util.Consts;
 import com.example.automation.util.IsLoaded;
 
 public class AdvancedSearchPageController extends LoadableComponent<AdvancedSearchPageController> {
@@ -46,7 +47,7 @@ public class AdvancedSearchPageController extends LoadableComponent<AdvancedSear
 	}
 	
 	public String getTextSearchResults(){	
-		IsLoaded.forThis(webDriver).waitUntilDisplayed(searchResult, 15);
+		IsLoaded.forThis(webDriver).waitUntilDisplayed(searchResult, Consts.TIMEOUT);
 		return searchResult.getText();
 	}
 }

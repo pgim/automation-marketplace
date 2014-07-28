@@ -9,6 +9,9 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 
+import com.example.automation.util.Consts;
+import com.example.automation.util.IsLoaded;
+
 public class TreasuryPageController extends
 		LoadableComponent<TreasuryPageController> {
 
@@ -39,11 +42,13 @@ public class TreasuryPageController extends
 		System.out.println(url);
 	}
 
-	public void loadFirstItem() {		
+	public void loadFirstItem() {
+		IsLoaded.forThis(webDriver).waitUntilDisplayed(lnk_firstItem, Consts.TIMEOUT);
 		lnk_firstItem.click();
 	}
 
 	public boolean isEmptyGallery() {
+		IsLoaded.forThis(webDriver).waitUntilDisplayed(list.get(0), Consts.TIMEOUT);
 		return list.isEmpty();
 	}
 }

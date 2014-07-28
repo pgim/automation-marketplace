@@ -11,6 +11,7 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 
+import com.example.automation.util.Consts;
 import com.example.automation.util.IsLoaded;
 
 public class CartPageController extends LoadableComponent<CartPageController>{
@@ -49,7 +50,7 @@ public class CartPageController extends LoadableComponent<CartPageController>{
 	}
 	
 	public void goToCart(){
-		IsLoaded.forThis(webDriver).waitUntilDisplayed(count, 30);
+		IsLoaded.forThis(webDriver).waitUntilDisplayed(count, Consts.TIMEOUT);
 		count.click();		
 	}
 	
@@ -70,11 +71,11 @@ public class CartPageController extends LoadableComponent<CartPageController>{
 	}
 	
 	public void loadFirstItem(){
-		IsLoaded.forThis(webDriver).clickWhenIsReady(items.get(0), 15);
+		IsLoaded.forThis(webDriver).clickWhenIsReady(items.get(0), Consts.TIMEOUT);
 	}
 	
 	public void addItem(){
-		IsLoaded.forThis(webDriver).clickWhenIsReady(btn_addToCart, 15);
+		IsLoaded.forThis(webDriver).clickWhenIsReady(btn_addToCart, Consts.TIMEOUT);
 	}
 	
 	public void removeItems(){		

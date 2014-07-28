@@ -8,5 +8,7 @@ public final class Consts {
 	
 	public static final String CHROME_DRIVER = "C:\\Documentos\\tmp\\chromedriver.exe";
 	
+	public static final int TIMEOUT = 30;
+	
 	public static final String BROWSER_UNDEFINED = "The browser is undefined";
 }

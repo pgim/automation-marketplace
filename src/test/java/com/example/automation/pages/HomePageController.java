@@ -9,6 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import org.testng.Assert;
 
+import com.example.automation.util.Consts;
 import com.example.automation.util.IsLoaded;
 
 public class HomePageController extends LoadableComponent<HomePageController>{
@@ -60,28 +61,28 @@ public class HomePageController extends LoadableComponent<HomePageController>{
 	}			
 	
 	public void search(String search){
-		IsLoaded.forThis(webDriver).waitUntilDisplayed(btnSearch, 20);
+		IsLoaded.forThis(webDriver).waitUntilDisplayed(btnSearch, Consts.TIMEOUT);
 		txtSearch.sendKeys(search);
 		btnSearch.click();
 	}
 	
 	public boolean isHeroDisplayed(){	
-		IsLoaded.forThis(webDriver).waitUntilDisplayed(hero, 10);
+		IsLoaded.forThis(webDriver).waitUntilDisplayed(hero, Consts.TIMEOUT);
 		return hero.isDisplayed();
 	}
 	
 	public LoginPageController goToLoginPage(){		 
-		IsLoaded.forThis(webDriver).clickWhenIsReady(lnkLogin, 10);
+		IsLoaded.forThis(webDriver).clickWhenIsReady(lnkLogin, Consts.TIMEOUT);
 		return new LoginPageController(webDriver);
 	}
 	
 	public TreasuryPageController goToTreasuryPage(){
-		IsLoaded.forThis(webDriver).clickWhenIsReady(lnkGallery, 10);
+		IsLoaded.forThis(webDriver).clickWhenIsReady(lnkGallery, Consts.TIMEOUT);
 		return new TreasuryPageController(webDriver);
 	}	
 			
 	public String getLoggedInUser(){
-		IsLoaded.forThis(webDriver).waitUntilDisplayed(lnkProfile, 30);
+		IsLoaded.forThis(webDriver).waitUntilDisplayed(lnkProfile, Consts.TIMEOUT);
 		return lnkProfile.getText();
 	}
 }
